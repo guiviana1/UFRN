@@ -1,38 +1,32 @@
 #include <bits/stdc++.h>
 
-int main() {
-    int quant, lote;
+int main () {
 
-    std::cin >> quant;
-    int lotes[quant];
+    int linhas, colunas;
+    std::cin >> linhas >> colunas;
 
-    for(int i = 0; i < quant; i++) {
-        std::cin >> lotes[i];
-        if (lotes[i] == 2) {
-            lote = i;
+
+    int matriz1[linhas][colunas];
+    int matriz2[colunas][linhas];
+
+    for(int i = 0 ; i < linhas ; i++) {        
+        for(int j = 0 ; j < colunas ; j++) {
+            std::cin >> matriz1[i][j];
         }
     }
 
-    int cont = 0;
-    for (int i = lote - 1; i >= 0; i--) {
-        if (lotes[i] == 0) {
-            cont++;
-        }
-        else {
-            break;
-        }
-    }
+     for(int i = 0 ; i < colunas ; i++) {         
+        for(int j = 0 ; j < linhas ; j++) {
+            matriz1[linhas][colunas] = matriz2[colunas][linhas];
 
-    for (int i = lote + 1; i < quant; i++) {
-        if (lotes[i] == 0) {
-            cont++;
-        }
-        else {
-            break;
-        }
-    }
 
-    std::cout << cont;
+        }
+     }
+
+
+    if (matriz1 == matriz2) {
+        std::cout << "Matriz Simétrica";
+    }
 
     return 0;
 }
