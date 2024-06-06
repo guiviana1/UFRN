@@ -30,18 +30,7 @@ for (inicio ; inicio <= fim ; inicio++) {
     if (eh_primo(inicio)) {
         contagem++;
     }
-
-
-}
-
-
-
-
-
-
-
-
-
+  }
 }
 
 else if (n2 > n1) {
