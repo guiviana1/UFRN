@@ -38,3 +38,34 @@ std::string trim(std::string str){
   return a;
 
 }
+
+
+
+ou 
+
+
+
+string trim(string a){
+  int inicio=0;
+  for(int i=0;i<a.size();i++){
+   if(a[i]!=' '){
+    inicio=i;
+    break;
+   }
+  }
+  int final=0;
+  for(int i=0; i<a.size(); i++){
+    if(a[i]!=' '){
+      final=i;
+    }
+  }
+  string trimmed;
+  //size-inicio - (size-final-1)
+  for(int i=inicio; i<=final; i++){
+    trimmed.push_back(a[i]);
+  }
+  //a.erase(final, a.size()-final-1);
+  //cout << inicio << " " << final << endl;
+  a=trimmed;
+  return a;
+}
