@@ -22,3 +22,25 @@ for(int i=0; i<n; i++){
   }
   tamanho = n;
 }
+
+
+
+ou
+
+
+
+void conjunto(int &tamanho, int sequencia[]) {
+  std::unordered_set<int> a;
+  for(int i=0;i<tamanho;i++){
+    if(a.find(sequencia[i])==a.end()){
+      a.insert(sequencia[i]);
+    }
+    else{
+      for(int j=i;j<tamanho-1;j++){
+        sequencia[j]=sequencia[j+1];
+      }
+      i--;
+      tamanho=tamanho-1;
+    }
+  }
+}
